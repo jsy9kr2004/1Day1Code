@@ -2,11 +2,12 @@
 #include <set>
 #include <string>
 #include <vector>
+#include <math.h>
 
 using namespace std;
 void check_prime(int p_num, int& answer) {
-    if (p_num == 0 || p_num == 1) return;
-    for (int i = 3 ; i < p_num ; i += 2) 
+    if (p_num == 0 || p_num == 1 || (p_num % 2 == 0 && p_num != 2) ) return;
+    for (int i = 3 ; i < sqrt(p_num + 1) ; i += 2) 
         if (p_num % i == 0) return;
     ++answer;
 }
